@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Marathon Performance Data Analysis | Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+                <!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Home</a>
+					</header>
+                
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="projects.html">Projects</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/philipqluong/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/pqluong1" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+					<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Marathon Performance Data Analysis<br />
+									</h1>
+									<br />
+									<p>This project uses R to focus on exploring historical race data and building a predictive model for the 2024 Flying Monkey Marathon. 
+                                        By analyzing trends and patterns in runner performance, this project aims to provide insights into individual performance factors and generate a reliable race time prediction.</p>
+								</header>
+								<div class="box alt">
+								</div>
+								<hr />
+                                <h2> Executive Summary<br /></h2>
+                                <p>Thegoal for	this	assignment	was	to	predict	the	inish	time	for	the	2024	Flying	Monkey	Marathon	based	on	previous	race	data.	Using	a	dataset	from	previous	marathons,	I	created	
+                                a	regression	model	to	predict	race	time	based	on	runner	characteristics	such	as	pace	and	
+                                placement.	The	model	showed	a	signi icant	relationship	between	these	variables	and	inish	
+                                times,	which	was	validated	through	residuals	analysis	and	prediction	accuracy.	The	inal	
+                                prediction	time	for	the	upcoming	race	was	approximately	5hrs	20mins	35secs	or	5:20:35.	
+                                This	prediction	can	assist	in	better	understanding	runner	performance	trends	and	helping	
+                                participants	set	realistic	race	goals.</p>
+                                <hr />
+                                <h2> Executive Summary<br /></h2>
+                                <p>In	this	analysis,	I	began	exploring	the	two	datasets	(MONKEY	and	RUNLOG)	to	understand	
+                                their	structure	and	to	ind	any	potential	issues	with	missing	or	inconsistent	data.	Missing	
+                                values	were	identi ied,	and	these	issues	were	ixed	through	data	cleaning	procedures,	
+                                including	replacing	missing	values	for	time-related	variables	and	converting	date	columns	
+                                into	the	appropriate	date	format.	</p>
+                                <p>I	then	began	visualizing	various	relationships	in	the	data.	For	the	RUNLOG	dataset,	
+                                histograms	and	boxplots	were	used	to	assess	the	distribution	of	mileage,	total	time,	and	
+                                weather	temperature,	as	well	as	how	these	factors	differ	by	pace	type.	Scatter	plots	were	
+                                used	to	explore	relationships	between	mileage,	total	time,	and	weather	temperature,	while	
+                                time	series	plots	helped	analyze	trends	in	mileage	and	race	time	over	different	race	dates.	
+                                These	visualizations	helped	identify	key	patterns	and	outliers	in	the	data.</p>	
+                                <p>For	the	MONKEY	dataset,	similar	visualizations	were	created,	where	I	focused	on	total	time	
+                                across	race	dates	and	the	distribution	of	average	pace.	These	provided	insights	into	how	
+                                performance	varied	over	time	and	among	different	racing	dates.	</p>
+                                 <p>A	linear	regression	model	was	built	using	the	MONKEY	dataset	to	predict	total	time	
+                                (Total_Time_S)	based	on	several	predictors,	including	pace,	race	placement,	and	age
+                                placement	factors.	The	regression	analysis	provided	estimates	of	how	these	variables	
+                                inluence	race	time.	The	model’s	residuals	were	examined	to	assess	its	it	and	ensure	the	
+                                predictions	were	reliable.	</p>
+                                <p>Finally,	the	model	was	used	to	predict	the	race	time	for	an	upcoming	event,	based	on	
+                                average	values	for	pace,	race	placement,	and	age.	The	prediction	was	converted	into	hours,	
+                                minutes,	and	seconds	to	provide	a	clear	estimate	of	the	expected	race	completion	time.	This	
+                                model	serves	as	a	useful	tool	for	predicting	future	race	outcomes	based	on	past	data.	</p>
+                                <p>In	comparing	the	predicted	marathon	time	of	5:20:35,	based	on	a	pace	of	12.19784	minutes	
+                                per	mile	from	the	most	recent	Flying	Monkey	Marathon,	to	the	actual	time	of	5:38:42	from	
+                                the	2024	Chickamauga	Marathon,	there	is	a	difference	of	18	minutes	and	7	seconds.	The	
+                                predicted	time	was	calculated	from	the	runner’s	previous	pace,	placement,	and	age	
+                                placement,	which	assumes	consistent	conditions	across	marathons.	However,	the	actual	
+                                time	is	longer,	likely	inluenced	by	external	factors	such	as	race	conditions,	weather,	fatigue,	
+                                or	course	dif iculty,	which	are	not	accounted	for	in	the	pace-based	estimation.	This	suggests	
+                                variations	in	race-day	conditions	can	lead	to	differences	in	overall	performance.	
+                                </p>
+							</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>Nashville, TN<br />
+								Knoxville, TN</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p>(615) 852-2332</p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="philip.luong2116@gmail.com">philip.luong2116@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/philipqluong/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/pqluong1" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Car Dealership Database Design | Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+                <!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Home</a>
+					</header>
+                
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="projects.html">Projects</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/philipqluong/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/pqluong1" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+					<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Car Dealership Database Design<br />
+									</h1>
+									<br />
+									<p>The purpose of this database is to manage and track the vehicle inventory, sales, and services at a 
+                                    Honda dealership. The system is designed to reflect realistic dealership operations, including 
+                                    inventory management, multiple sales of the same vehicle (e.g., trade-ins and resales), and 
+                                    service records. It supports tracking customer purchases, staff performance, and vehicle history. </p>
+								</header>
+								<div class="box alt">
+								</div>
+								<hr />
+								<h2>Entity Definitions</h2>
+									<dl>
+										<dt>Vehicle</dt>
+										<dd>
+											<p>Each car is identified by its VIN and may be sold and serviced multiple times throughout its lifetime.</p>
+										</dd>
+										<dt>Inventory</dt>
+										<dd>
+											<p>Tracks vehicles currently in stock. A unique Stock Number is used for each instance a vehicle enters the lot. If a vehicle is resold or returned, it receives a new Stock Number.</p>
+										</dd>
+										<dt>Customer</dt>
+										<dd>
+											<p>Individuals who purchase vehicles from the dealership.</p>
+										</dd>
+										<dt>Salesperson</dt>
+										<dd>
+											<p>Employees responsible for completing vehicle sales.</p>
+										</dd>
+										<dt>Sale</dt>
+										<dd>
+											<p>Each sale transaction includes one customer, one salesperson, and may involve one or more vehicles.</p>
+										</dd>
+										<dt>SoldVehicle</dt>
+										<dd>
+											<p>A junction table that connects each sale to the vehicles involved. This allows the same vehicle (VIN) to be sold multiple times and tracks which Stock Number was sold in each transaction.</p>
+										</dd>
+										<dt>Service</dt>
+										<dd>
+											<p>Maintains a record of service events (maintenance or repair) tied to a vehicle VIN, allowing for a full history of service regardless of ownership.</p>
+										</dd>
+									</dl>
+								<hr />
+								<h2>Conceptual Design and ERD</h2><br/>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Entity</th>
+													<th>Description</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Vehicle</td>
+													<td>A strong entity; attributes: VIN (Primary Key), Make, Model, Year, Price, Color, Mileage, Condition</td>
+												</tr>
+												<tr>
+													<td>Inventory</td>
+													<td>A strong entity; attributes: Inventory_ID (Primary Key), VIN (Foreign Key), Stock_Number, Location</td>
+												</tr>
+												<tr>
+													<td>Customer</td>
+													<td>A strong entity; attributes: Customer_ID (Primary Key), First_Name, Last_Name, Phone_Number, Email_Address, Address</td>
+												</tr>
+												<tr>
+													<td>Salesperson</td>
+													<td>A strong entity; attributes: Salesperson_ID (Primary Key), First_Name, Last_Name, Employee_Number, Phone_Number, Email_Address</td>
+												</tr>
+												<tr>
+													<td>Sale</td>
+													<td>A strong entity; attributes: Sale_ID (Primary Key), Customer_ID (Foreign Key), Salesperson_ID (Foreign Key), Sale_Date, Sale_Price, Payment_Method</td>
+												</tr>
+												<tr>
+													<td>SoldVehicle</td>
+													<td>A junction (associative) entity; attributes: SoldVehicle_ID (Primary Key), Sale_ID (Foreign Key), VIN (Foreign Key), Stock_Number (Foreign Key)</td>
+												</tr>
+												<tr>
+													<td>Service</td>
+													<td>A strong entity; attributes: Service_ID (Primary Key), VIN (Foreign Key), Service_Type, Service_Date, Cost</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<a><img src="images/ERD.JPG" alt="" style="display: block; margin: 0 auto;"/></a>
+							</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>Nashville, TN<br />
+								Knoxville, TN</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p>(615) 852-2332</p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="philip.luong2116@gmail.com">philip.luong2116@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/philipqluong/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/pqluong1" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
